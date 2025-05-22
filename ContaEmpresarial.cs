@@ -10,7 +10,7 @@
     }
     public void setAnuidade(double anuidade) 
     {
-        this._anuidade = anuidade;
+        _anuidade = anuidade;
     }
     public double getLimiteEMP()
     {
@@ -18,7 +18,7 @@
     }
     public void setLimiteEMP(double limiteEmprestimo)
     {
-        this._limiteEmprestimo = limiteEmprestimo;
+        _limiteEmprestimo = limiteEmprestimo;
     }
     public double getTotalEMP()
     { 
@@ -31,19 +31,28 @@
         if (saldo <= _limiteEmprestimo - _totalEmprestimo)
         {
             _saldo += saldo;
-            _totalEmprestimo += _saldo;
+            _totalEmprestimo += saldo;
+        }
+        else
+        {
+            throw new Exception("Valor de emprestimo não pode ser concedido!");
         }
     }
     public override void Sacar(double saldo)
     {
-        if (saldo > 5000)
+        if (saldo > 5000 && saldo <= _saldo-5)
         {
-            saldo += 5.00;
-            saldo -= _saldo;
+            _saldo -= saldo;
+            _saldo = -5;
+        
+        }
+        else if (saldo < 5000)
+        {
+            base.Sacar(saldo);
         }
         else
         {
-            base.Sacar(saldo);
+            throw new Exception("Saldo insuficiente");
         }
     }
 }

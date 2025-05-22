@@ -11,7 +11,7 @@
     }
     public void setLimiteCE(double limiteCE)
     {
-        this._limiteChequeEspecial = limiteCE;
+        _limiteChequeEspecial = limiteCE;
     }
     public string getCpf()
     {
@@ -19,7 +19,7 @@
     }
     public void setNomeInst(string Cpf)
     {
-        this._cpf = Cpf;
+        _cpf = Cpf;
     }
     public string getNomeIns()
     {
@@ -27,11 +27,18 @@
     }
     public void setNomeIns(string NomeInst)
     {
-        this._nomeInst = NomeInst;
+        _nomeInst = NomeInst;
     }
     public override void Sacar(double saque) 
     {
-       _saldo = saque;
+        if (saque > 0 && saque <= _saldo + _limiteChequeEspecial)
+        {
+            _saldo = saque;
+        }
+        else
+        {
+            throw new Exception("Saldo insuficiente");
+        }
     }
 
 }

@@ -12,3 +12,4 @@ C:\Users\2024102060028\Desktop\POO - FELIPE GOMES\Aula1405 - POO\Atv1405\obj\Deb
 C:\Users\2024102060028\Desktop\POO - FELIPE GOMES\Aula1405 - POO\Atv1405\obj\Debug\net8.0\Atv1405.pdb
 C:\Users\2024102060028\Desktop\POO - FELIPE GOMES\Aula1405 - POO\Atv1405\obj\Debug\net8.0\Atv1405.genruntimeconfig.cache
 C:\Users\2024102060028\Desktop\POO - FELIPE GOMES\Aula1405 - POO\Atv1405\obj\Debug\net8.0\ref\Atv1405.dll
+C:\Users\2024102060028\Desktop\POO - FELIPE GOMES\Aula1405 - POO\Atv1405\obj\Debug\net8.0\Atv1405.sourcelink.json

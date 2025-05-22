@@ -5,13 +5,13 @@
     private string _nome;
     protected double _saldo;
 
-    public int getN_Conta()
+    public int getN_Conta() // Sempre terá o retorno
     {
         return _nConta;
     }
-    public void setN_Conta(int nConta)
+    public void setN_Conta(int nConta) // Sempre será o Parâmetro
     {
-        this._nConta = nConta;
+        _nConta = nConta;
     }
 
     public string getAgencia()
@@ -20,7 +20,7 @@
     }
     public void setAgencia(string Agencia)
     {
-        this._agencia = Agencia;
+        _agencia = Agencia;
     }
     public string getNome()
     {
@@ -28,13 +28,19 @@
     }
     public void setNome(string Nome)
     {
-        this._nome = Nome;
+        _nome = Nome;
     }
+
+    public double getSaldo()
+    {
+        return _saldo;
+    }
+    
 
 
     public virtual void Sacar(double saldo)
     {
-        if (saldo > 0)
+        if (saldo <= _saldo && saldo > 0)
         {
             _saldo -= saldo;
         }
@@ -47,16 +53,11 @@
 
     public virtual void Depositar(double deposito)
     {
-        if (deposito > 0)
+        if (deposito <= 0)
         {
-            
+            throw new Exception("Valor Inválido");
         }
-
-        else
-        {
-            throw new Exception("Valor para depósito precisa ser maior que 0,00");
-        }
-
+        _saldo += deposito;
 
     }
 
